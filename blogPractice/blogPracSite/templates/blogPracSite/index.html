@@ -1,0 +1,10 @@
+<h3>Unseen posts : {{ num_posts }}</h3>
+{% for post in posts %}
+<li>
+    Post no. {{ post.id }} :
+    <a href="about">Caption : {{ post.caption }}</a>
+<!--    <a href="post/{{ post.id }}">Caption : {{ post.caption }}</a>-->
+    <a href="about">Commentator : {{ post.commentator.author }}</a>
+<!--    <a href="commentator/{{ post.commentator.id }}">Commentator : {{ post.commentator.author }}</a>-->
+</li>
+{% endfor %}
