@@ -1,0 +1,6 @@
+{% for song in songs %}
+<ul>
+  <li><a href="{% url 'play:music_file' song.id %}">{{ song.artist }} - {{ song.title }}</a></li>
+  <div>Loved by {{ song.favorite_by.all|slice:5|unordered_list }}</div>
+</ul>
+{% endfor %}

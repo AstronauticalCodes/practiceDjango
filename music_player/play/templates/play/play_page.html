@@ -1,0 +1,11 @@
+{% if user.is_authenticated %}
+<h2>{{song.artist }} - {{ song.title  }}</h2>
+<audio controls>
+   <source src="{{ song.path_to_file.url }}" type="audio/mpeg">
+</audio>
+<form action="{% url 'play:likes' song.id %}" method="post">
+   {% csrf_token %}
+   <input type="hidden" name="song_id" value="{{ song.id }}">
+   <button type="submit">Add to favorites</button>
+</form>
+{% endif %}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Greetings Page</title>
+</head>
+<body>
+    <h1>Hello, {{ greeting_to }}</h1>
+    <h1>Unread articles for today: {{ num_articles }}</h1>
+    {% for article in articles %}
+        <h4>{{ article.title }}</h4>
+        <h4> {{ article.author }} </h4>
+        <p> {{ article.date }} </p>
+        <p> {{ article.text }} </p>
+        <br>
+    {% endfor %}
+</body>
+</html>
