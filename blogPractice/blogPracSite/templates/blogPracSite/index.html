@@ -1,10 +1,14 @@
 <h3>Unseen posts : {{ num_posts }}</h3>
 {% for post in posts %}
-<li>
-    Post no. {{ post.id }} :
-    <a href="about">Caption : {{ post.caption }}</a>
-<!--    <a href="post/{{ post.id }}">Caption : {{ post.caption }}</a>-->
-    <a href="about">Commentator : {{ post.commentator.author }}</a>
-<!--    <a href="commentator/{{ post.commentator.id }}">Commentator : {{ post.commentator.author }}</a>-->
+<h3>Post no. {{ post.id }} :</h3>
+<li>Caption :
+<!--    <a href="about">{{ post.caption }}</a>-->
+<!--    <br>-->
+    <a href="post/{{ post.id }}">{{ post.caption }}</a><br>
+    Commentator :
+<!--    <a href="about">{{ post.commentator.author }}</a>-->
+    <a href="commentator/{{ post.commentator.id }}">Commentator : {{ post.commentator.author }}</a>
+    <hr>
 </li>
 {% endfor %}
+<h3><a href="about/">View all commentators.</a></h3>
